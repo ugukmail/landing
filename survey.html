@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoPost Features Survey</title>
+    <style>
+        /* GoPost Brand Colors */
+        :root {
+            --primary-color: #22D3EE; /* Cyan */
+            --button-color: #FDE047; /* Yellow */
+            --secondary-color: #3B82F6; /* Blue */
+            --accent-color-1: #9333EA; /* Purple */
+            --accent-color-2: #16A34A; /* Green */
+            --background-color: #F0F9FF; /* Light Cyan */
+            --section-bg-color: #FFFFFF; /* White */
+            --primary-text-color: #1F2937; /* Dark Gray */
+            --secondary-text-color: #4B5563; /* Gray */
+            --border-color: #D1D5DB; /* Light Gray */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-text-color);
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .progress-bar-container {
+            width: 80%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            height: 15px;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+        }
+
+        form {
+            background-color: var(--section-bg-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .section {
+            display: none;
+            margin-bottom: 25px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: var(--primary-text-color);
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: var(--secondary-text-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .radio-buttons label {
+            margin-right: 20px;
+        }
+
+        input[type="radio"], input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        input[type="radio"]:focus, input[type="text"]:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn-submit, .btn-back {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            width: auto;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover, .btn-back:hover {
+            background-color: black; /* Black on hover */
+        }
+
+        .btn-back {
+            background-color: var(--accent-color-2);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .btn-submit, .btn-back {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .section h3 {
+                font-size: 1.2em;
+            }
+
+            input[type="radio"], input[type="text"], textarea {
+                padding: 10px;
+                font-size: 1em;
+            }
+
+            .btn-submit, .btn-back {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 6;
+        const sections = document.querySelectorAll('.section');
+
+        function showNextQuestion(question) {
+            const nextQuestion = document.getElementById(`question${question}`);
+            const previousQuestion = document.getElementById(`question${question - 1}`);
+            
+            // Hide the current question
+            if (previousQuestion) {
+                previousQuestion.style.display = 'none';
+            }
+            
+            // Show the next question
+            nextQuestion.style.display = 'block';
+            currentQuestion = question;
+            updateProgress();
+        }
+
+        function showPreviousQuestion() {
+            const previousQuestion = document.getElementById(`question${currentQuestion - 1}`);
+            const currentQuestionElement = document.getElementById(`question${currentQuestion}`);
+
+            if (previousQuestion) {
+                previousQuestion.style.display = 'block';
+            }
+
+            if (currentQuestionElement) {
+                currentQuestionElement.style.display = 'none';
+            }
+            currentQuestion--;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progressBar = document.querySelector('.progress-bar');
+            const progressPercentage = (currentQuestion / totalQuestions) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+
+        function toggleOtherPlatforms() {
+            const autoPostYes = document.querySelector('input[name="auto_post"][value="Yes"]');
+            const otherPlatformsSection = document.getElementById("other_platforms_section");
+            
+            if (autoPostYes.checked) {
+                otherPlatformsSection.style.display = "block";
+                showNextQuestion(2);
+            } else {
+                otherPlatformsSection.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstQuestion = document.getElementById("question1");
+            firstQuestion.style.display = 'block';
+            updateProgress();
+        });
+
+    </script>
+</head>
+<body>
+
+    <h2>Help Us Improve GoPost!</h2>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <form>
+        <!-- Question 1 -->
+        <div id="question1" class="section">
+            <h3>1. Instagram Post Automation</h3>
+            <label>Would it add value if your Instagram posts were automatically published to YouTube and LinkedIn?</label>
+            <div class="radio-buttons">
+                <input type="radio" name="auto_post" value="Yes" onclick="showNextQuestion(2)"> Yes
+                <input type="radio" name="auto_post" value="No" onclick="showNextQuestion(2)"> No
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="section">
+            <h3>2. Additional Platforms</h3>
+            <label>Are there any other platforms you'd like your posts to be automatically published on?</label>
+            <input type="text" name="other_platforms" placeholder="Enter platform names (Optional)">
+            <button type="button" class="btn-submit" onclick="showNextQuestion(3)">Next</button>
+            <button type="button" class="btn-back" onclick="showPreviousQuestion()">Back</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question3" class="section">
+            <h3>3. Repurpose Instagram Posts</h3>
+            <label>Would you like to repurpose past Instagram posts for YouTube or LinkedIn?</label>
+            <div class="radio-buttons">
+                <input type="radio" name="repurpose" value="Yes" onclick="showNextQuestion(4)"> Yes
+                <input type="radio" name="repurpose" value="No" onclick="showNextQuestion(4)"> No
+            </div>
+            <button type="button" class="btn-back" onclick="showPreviousQuestion()">Back</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question4" class="section">
+            <h3>4. Bulk Post Updates</h3>
+            <label>Would it help if you could update post descriptions across Instagram, YouTube, and LinkedIn all at once?</label>
+            <div class="radio-buttons">
+                <input type="radio" name="mass_update" value="Yes" onclick="showNextQuestion(5)"> Yes
+                <input type="radio" name="mass_update" value="No" onclick="showNextQuestion(5)"> No
+            </div>
+            <button type="button" class="btn-back" onclick="showPreviousQuestion()">Back</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div id="question5" class="section">
+            <h3>5. Social Media Archiving</h3>
+            <label>Would you find it useful to automatically save all your social media content to Google Drive with one click?</label>
+            <div class="radio-buttons">
+                <input type="radio" name="mass_archive" value="Yes" onclick="showNextQuestion(6)"> Yes
+                <input type="radio" name="mass_archive" value="No" onclick="showNextQuestion(6)"> No
+            </div>
+            <button type="button" class="btn-back" onclick="showPreviousQuestion()">Back</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div id="question6" class="section">
+            <h3>6. Other Features</h3>
+            <label>What other features would make social media easier for you?</label>
+            <textarea name="other_features" placeholder="Share your ideas..."></textarea>
+            <button type="submit" class="btn-submit">Submit</button>
+            <button type="button" class="btn-back" onclick="showPreviousQuestion()">Back</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
