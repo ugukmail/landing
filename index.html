@@ -13,114 +13,99 @@
         }
 
         body {
-            background: linear-gradient(135deg, #22D3EE, #1F2937);
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow-x: hidden;
-            overflow-y: auto;
+            min-height: 100vh;
+            background: #F0F9FF;
+            color: #1F2937;
+            padding: 20px;
+            font-size: 16px;
         }
 
         .main-container {
             display: flex;
-            height: auto;
-            width: 90%;
-            max-width: 1600px;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
             margin-top: 20px;
+            padding: 40px;
             border-radius: 20px;
-            background: #F0F9FF;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            padding-bottom: 20px;
+            background: #ffffff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .hero-image {
-            width: 100%;
-            max-width: 1600px;
+            max-width: 100%;
             height: auto;
-            object-fit: contain;
         }
 
         .content-container {
-            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the items horizontally */
+            gap: 30px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
             background: #FFFFFF;
             color: #1F2937;
-            padding: 60px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            border-radius: 20px;
+            transition: 0.3s ease;
         }
 
-        .content-container h1 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-align: center;
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            font-weight: 600;
             color: #22D3EE;
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 30px;
-            background-color: #D1D5DB;
-            border-radius: 15px;
-            margin-top: 20px;
-            overflow: hidden;
-            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .coming-soon-box {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #FDE047 60%, #D1D5DB 50%);
-            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.15);
-            color: #1F2937;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .coming-soon-box span {
-            z-index: 1;
-        }
-
-        .content-container p {
-            font-size: 18px;
             margin-bottom: 20px;
-            line-height: 1.5;
-            text-align: center;
         }
 
-        .highlight {
-            font-size: 22px;
-            font-weight: bold;
-            color: #16A34A;
-            background: #D1FAE5;
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
+        .card p {
+            font-size: 16px;
+            line-height: 1.6;
             text-align: center;
+            color: #4B5563;
         }
 
-        .content-container input {
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .input-container p {
+            margin-bottom: 20px; /* Add spacing between the paragraphs */
+        }
+
+        .input-container input {
+            width: 100%;
+            max-width: 500px;
             padding: 16px;
             font-size: 18px;
             border: 2px solid #D1D5DB;
@@ -130,11 +115,11 @@
             transition: 0.3s;
         }
 
-        .content-container input:focus {
+        .input-container input:focus {
             border-color: #22D3EE;
         }
 
-        .content-container button {
+        .input-container button {
             background: linear-gradient(135deg, #22D3EE, #1F2937);
             color: #fff;
             padding: 18px 22px;
@@ -145,20 +130,11 @@
             cursor: pointer;
             transition: 0.3s;
             width: 100%;
+            max-width: 500px;
         }
 
-        .content-container button:hover {
-            background: linear-gradient(135deg, #1F2937, #22D3EE);
-        }
-
-        .email-box {
-            margin-top: 20px;
-            padding: 14px;
-            border-radius: 10px;
-            background-color: #D1FAE5;
-            color: #16A34A;
-            font-weight: bold;
-            text-align: center;
+        .input-container button:hover {
+            background: linear-gradient(135deg, #1F2937, #22D3EE);            
         }
 
         .privacy {
@@ -175,204 +151,99 @@
 
         .footer {
             font-size: 14px;
-            color: #ffffff;
+            color: #4B5563;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
+            width: 100%;
         }
 
         .footer span {
             color: #22D3EE;
         }
 
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 40px 20px;
-            width: 100%;
-            max-width: 1600px;
-            background-color: #FFFFFF;
-            border-radius: 20px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-
-        .image-gallery img {
-            width: 280px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.1);
-        }
-
-        .image-gallery h2 {
-            width: 100%;
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #1F2937;
-            font-weight: bold;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            max-width: 80%;
-            max-height: 80%;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
-            color: #000;
-            cursor: pointer;
-        }
-
-        @media (max-width: 1024px) {
-            .main-container {
+        @media (max-width: 768px) {
+            .content-container {
                 flex-direction: column;
-                height: auto;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
             }
 
             .hero-container {
-                width: 100%;
+                margin-bottom: 20px;
             }
 
             .hero-image {
                 width: 100%;
-                max-width: 1200px;
-            }
-
-            .content-container {
-                width: 100%;
-                padding: 40px;
-            }
-
-            .image-gallery img {
-                width: 100%;
-                max-width: 350px;
-                height: auto;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero-container {
+                margin-bottom: 10px;
+            }
+
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .input-container input,
+            .input-container button {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                width: 100%; /* Make the image take up the full width */
+                max-width: 600px; /* Optional, if you want to limit the maximum width */
+                height: auto; /* Ensure the aspect ratio is maintained */
+            }
+        }
+
     </style>
-    <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById("myModal");
-            const modalImg = document.getElementById("modalImage");
-            modal.style.display = "flex";
-            modalImg.src = imageSrc;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-
-        function submitEmail() {
-            console.log("Button Clicked!");
-
-            const email = document.getElementById("email-input").value;
-            
-            if (!email) {
-                alert("Please enter a valid email!");
-                return;
-            }
-
-            console.log("Sending Email:", email);
-
-            const googleSheetURL = "https://script.google.com/macros/s/AKfycbxvMptYUQdyNmBd70O4KUTbSfQT7ktjulWBO4Di1tE/dev"; // Use updated URL
-
-            fetch(googleSheetURL, {
-                method: "POST",
-                body: new URLSearchParams({ email: email }) // Use URL params instead of JSON
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log("Response from Google Sheets:", data);
-                alert("Thank you! Your email has been saved.");
-                document.getElementById("email-input").value = ""; // Clear input field
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-        }
-    </script>
 </head>
 <body>
     <div class="main-container">
-        <div class="hero-container">
-            <img src="image.png" alt="GoPost Hero Image" class="hero-image">
-        </div>
+
+ <div class="hero-container">
+    <figure>
+        <img src="image.png" alt="GoPost Hero Image" class="hero-image">
+        <figcaption><h2><strong>Welcome to GoPost!</strong></h2></figcaption>
+    </figure>            
+</div>
+
 
         <div class="content-container">
-            <h1>GoPost 🚀</h1>
-            <p><strong>"Post Once, Share Everywhere!"</strong></p>
-
-            <!-- Coming Soon Box as Progress Bar -->
-            <div class="progress-bar-container">
-                <div class="coming-soon-box">
-                    <span>Coming Soon</span>
-                </div>
+            <!-- Imagine this Card -->
+            <div class="card">
+                <h2>🚨 Imagine this:</h2>
+                <p>You’re a content creator juggling across multiple social platforms. Every time you upload a video to YouTube, you have to manually copy everything over to Instagram, TikTok, and LinkedIn. It’s time-consuming and keeps you away from what you love—creating content.</p>
             </div>
-            <p>We are working hard to bring GoPost to you. Stay tuned!</p>
 
-            <p><strong>GoPost</strong> makes native distribution of your content across social platforms effortless. We're giving away <strong>1-year free access</strong> to the first <strong>1000 users</strong>! 🎉 <strong>Don't miss out!</strong></p>
+            <!-- GoPost solves Card -->
+            <div class="card">
+                <h2>✨ GoPost solves that!</h2>
+                <p>GoPost makes it easy to move your videos, titles, thumbnails, and descriptions from any platform—like YouTube, Instagram, TikTok, or LinkedIn—to multiple destinations with just a few clicks. Save time and focus on what really matters: creating content!</p>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <p>If this sounds useful to you, <strong>register your interest</strong>, and we’ll be in touch when we launch!</p>
+            <br>
+            <p><strong>🎁 Grab it before it's gone!</strong> We’re giving away <strong>1-year free access</strong> to the first <strong>1000 users</strong>! 🎉</p>
+            <br>
             <input type="email" id="email-input" placeholder="Enter your email to claim your spot...." required>
             <button onclick="submitEmail()">🔥 Become an Early Adopter</button>
             <div class="privacy"><a href="https://doohma.com/privacy.html">Privacy Policy</a></div>
-        </div>
-
-        <!-- GoPost Features in Action Images -->
-        <div class="image-gallery">
-            <h2>GoPost Features in Action</h2>
-            <img src="image.png" alt="Image 1" onclick="openModal('image.png')">
-            <img src="1.png" alt="Image 1" onclick="openModal('1.png')">
-            <img src="2.png" alt="Image 2" onclick="openModal('2.png')">
-            <img src="3.png" alt="Image 3" onclick="openModal('3.png')">
-            <img src="4.png" alt="Image 4" onclick="openModal('4.png')">
-            <img src="5.png" alt="Image 5" onclick="openModal('5.png')">
-            <img src="6.png" alt="Image 6" onclick="openModal('6.png')">
-            <img src="7.png" alt="Image 7" onclick="openModal('7.png')">
-            <img src="8.png" alt="Image 8" onclick="openModal('8.png')">
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal" onclick="closeModal()">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Modal Image" style="width: 100%; height: auto;">
         </div>
     </div>
 
     <div class="footer">
         <p>Built with ❤️ by <span><a href="https://www.doohma.com" target="_blank" style="color: #22D3EE; text-decoration: none;">Doohma Limited</a></span> in London, UK.</p>
-        <br><br>
     </div>
 </body>
 </html>
