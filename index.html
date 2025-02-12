@@ -1,250 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoPost - Automate Your Content</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: #F0F9FF;
-            color: #1F2937;
-            padding: 20px;
-            font-size: 16px;
-        }
-
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin-top: 20px;
-            padding: 40px;
-            border-radius: 20px;
-            background: #ffffff;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-container {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .content-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center the items horizontally */
-            gap: 30px;
-            width: 100%;
-            margin-top: 40px;
-        }
-
-        .card {
-            width: 100%;
-            max-width: 480px;
-            background: #FFFFFF;
-            color: #1F2937;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .card h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #22D3EE;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .card p {
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: center;
-            color: #4B5563;
-        }
-
-        .input-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .input-container p {
-            margin-bottom: 20px; /* Add spacing between the paragraphs */
-        }
-
-        .input-container input {
-            width: 100%;
-            max-width: 500px;
-            padding: 16px;
-            font-size: 18px;
-            border: 2px solid #D1D5DB;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .input-container input:focus {
-            border-color: #22D3EE;
-        }
-
-        .input-container button {
-            background: linear-gradient(135deg, #22D3EE, #1F2937);
-            color: #fff;
-            padding: 18px 22px;
-            font-size: 20px;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .input-container button:hover {
-            background: linear-gradient(135deg, #1F2937, #22D3EE);            
-        }
-
-        .privacy {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #4B5563;
-            text-align: center;
-        }
-
-        .privacy a {
-            color: #22D3EE;
-            text-decoration: none;
-        }
-
-        .footer {
-            font-size: 14px;
-            color: #4B5563;
-            text-align: center;
-            margin-top: 40px;
-            width: 100%;
-        }
-
-        .footer span {
-            color: #22D3EE;
-        }
-
-        @media (max-width: 768px) {
-            .content-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .hero-container {
-                margin-bottom: 20px;
-            }
-
-            .hero-image {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-container {
-                margin-bottom: 10px;
-            }
-
-            .card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .input-container input,
-            .input-container button {
-                max-width: 100%;
-            }
-
-            .hero-image {
-                width: 100%; /* Make the image take up the full width */
-                max-width: 600px; /* Optional, if you want to limit the maximum width */
-                height: auto; /* Ensure the aspect ratio is maintained */
-            }
-        }
-
-    </style>
+    <title>GoPost - Automated Content Distribution Across Social Platforms</title>
+    <link rel="icon" href="gopost.png" type="image/png">
+    <link rel="stylesheet" href="style.css">    
 </head>
-<body>
-    <div class="main-container">
 
- <div class="hero-container">
-    <figure>
-        <img src="image.png" alt="GoPost Hero Image" class="hero-image">
-        <figcaption><h2><strong>Welcome to GoPost!</strong></h2></figcaption>
-    </figure>            
+<body>
+<div class="main-container">
+
+    <div class="hero-container">
+        <figure>
+            <img src="image.png" alt="GoPost Hero Image" class="hero-image">
+            <figcaption><h2><strong>Welcome to GoPost!</strong></h2></figcaption>
+        </figure>            
+    </div>
+
+
+    <div class="content-container">
+        <!-- Imagine this Card -->
+        <div class="card">
+            <h2>🚨 Imagine this:</h2>
+            <p>You’re a content creator juggling across multiple social platforms. Every time you upload a video to YouTube, you have to manually copy everything over to Instagram, TikTok, and LinkedIn. It’s time-consuming and keeps you away from what you love—creating content.</p>
+        </div>
+
+        <!-- GoPost solves Card -->
+        <div class="card">
+            <h2>✨ GoPost solves that!</h2>
+            <p>GoPost makes it easy to move your videos, titles, thumbnails, and descriptions from any platform—like YouTube, Instagram, TikTok, or LinkedIn—to multiple destinations with just a few clicks. Save time and focus on what really matters: creating content!</p>
+        </div>
+
+    </div>
+
+    <div class="input-container">
+        <p>If this sounds useful to you, <strong>register your interest</strong>, and we’ll be in touch when we launch!</p>
+        <br>
+        <p><strong>🎁 Grab it before it's gone!</strong> We’re giving away <strong>1-year free access</strong> to the first <strong>1000 users</strong>! 🎉</p>
+        <br>
+        <form id="contact-form">
+            <input type="email" id="email-input" name="your-email" placeholder="Enter your email to claim your spot...." required>
+            <button type="submit" id="submit">🔥 Become an Early Adopter</button>
+        </form>
+
+        <div class="privacy">
+            <a href="https://doohma.com/privacy.html">Privacy Policy</a>
+        </div>
+
+        <!-- Add loading spinner next to the button if needed -->
+        <div id="loading-message" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+
 </div>
 
-
-        <div class="content-container">
-            <!-- Imagine this Card -->
-            <div class="card">
-                <h2>🚨 Imagine this:</h2>
-                <p>You’re a content creator juggling across multiple social platforms. Every time you upload a video to YouTube, you have to manually copy everything over to Instagram, TikTok, and LinkedIn. It’s time-consuming and keeps you away from what you love—creating content.</p>
-            </div>
-
-            <!-- GoPost solves Card -->
-            <div class="card">
-                <h2>✨ GoPost solves that!</h2>
-                <p>GoPost makes it easy to move your videos, titles, thumbnails, and descriptions from any platform—like YouTube, Instagram, TikTok, or LinkedIn—to multiple destinations with just a few clicks. Save time and focus on what really matters: creating content!</p>
-            </div>
-        </div>
-
-        <div class="input-container">
-            <p>If this sounds useful to you, <strong>register your interest</strong>, and we’ll be in touch when we launch!</p>
-            <br>
-            <p><strong>🎁 Grab it before it's gone!</strong> We’re giving away <strong>1-year free access</strong> to the first <strong>1000 users</strong>! 🎉</p>
-            <br>
-            <input type="email" id="email-input" placeholder="Enter your email to claim your spot...." required>
-            <button onclick="submitEmail()">🔥 Become an Early Adopter</button>
-            <div class="privacy"><a href="https://doohma.com/privacy.html">Privacy Policy</a></div>
-        </div>
-    </div>
-
-    <div class="footer">
+<div class="footer">
         <p>Built with ❤️ by <span><a href="https://www.doohma.com" target="_blank" style="color: #22D3EE; text-decoration: none;">Doohma Limited</a></span> in London, UK.</p>
-    </div>
+</div>
+
+<script src="jssheet.js"></script>
 </body>
 </html>
